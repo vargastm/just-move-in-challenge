@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+/* Color design tokens (Tailwind v4 @theme) */
+@theme {
+  --color-surface: #f5f4f1;
+  --color-surface-elevated: #ffffff;
+  --color-text-primary: #1a1a18;
+  --color-text-muted: #6b6966;
+  --color-accent: #2d6a4f;
+  --color-accent-hover: #1b4332;
+  --color-border-subtle: #e8e6e1;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
