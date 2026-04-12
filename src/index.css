@@ -2,13 +2,23 @@
 
 /* Color design tokens (Tailwind v4 @theme) */
 @theme {
-  --color-surface: #f5f4f1;
-  --color-surface-elevated: #ffffff;
-  --color-text-primary: #1a1a18;
-  --color-text-muted: #6b6966;
-  --color-accent: #2d6a4f;
-  --color-accent-hover: #1b4332;
-  --color-border-subtle: #e8e6e1;
+  --font-sans: 'Inter', sans-serif;
+
+  --color-text-primary: #09090B;
+  --color-text-secondary: #71717A;
+
+  --color-primary-brand: #6144DD;
+  --color-primary-border: #E4E4E7;
+  --color-secondary-border: #D0DCE7;
+
+  --color-primary-green: #15803D;
+  --color-secondary-green: #DCFCE7;
+
+  --color-primary-yellow: #FEEA70;
+  --color-secondary-yellow: #ECDF8D;
+
+  --color-primary-blue: #DBEAFE;
+  --color-secondary-blue: #E5F3FF;
 }
 
 body {
