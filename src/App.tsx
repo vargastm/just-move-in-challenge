@@ -25,11 +25,15 @@ function App() {
               />
               <EnergyPlan
                 {...energyPlanMock}
+                ctaVariant="dual"
                 ratesDetails={
                   <EnergyPlanUnitRatesDetails {...energyPlanUnitRatesMock} />
                 }
                 onChoosePlan={() => {
-                  alert('Choose plan - future feature')
+                  alert('Lock in — future feature')
+                }}
+                onShowOtherPlans={() => {
+                  alert('Other plans — future feature')
                 }}
                 onViewRates={() => {
                   /* optional analytics */

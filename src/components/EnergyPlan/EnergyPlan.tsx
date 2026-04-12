@@ -7,6 +7,8 @@ import leafSvg from '../../assets/leaf.svg'
 import trophySvg from '../../assets/trophy.svg'
 import { EstimatedElectricityCostPanel } from '../EstimatedElectricityCostPanel'
 
+export type EnergyPlanCtaVariant = 'single' | 'dual'
+
 export type EnergyPlanProps = {
   savingsBannerText?: string
   isTopPick?: boolean
@@ -20,7 +22,11 @@ export type EnergyPlanProps = {
   estimatedMonthlyElectricityCost: number
   estimatedAnnualElectricityCost: number
   ratesDetails?: ReactNode
+  ctaVariant?: EnergyPlanCtaVariant
+  primaryCtaLabel?: string
+  secondaryCtaLabel?: string
   onChoosePlan?: () => void
+  onShowOtherPlans?: () => void
   onViewRates?: () => void
   onTopPickInfo?: () => void
 }
@@ -104,7 +110,11 @@ export function EnergyPlan({
   estimatedMonthlyElectricityCost,
   estimatedAnnualElectricityCost,
   ratesDetails,
+  ctaVariant = 'single',
+  primaryCtaLabel = 'Lock in with British Gas',
+  secondaryCtaLabel = 'Show me other plans',
   onChoosePlan,
+  onShowOtherPlans,
   onViewRates,
   onTopPickInfo,
 }: EnergyPlanProps) {
@@ -194,14 +204,35 @@ export function EnergyPlan({
             estimatedMonthlyElectricityCost={estimatedMonthlyElectricityCost}
             estimatedAnnualElectricityCost={estimatedAnnualElectricityCost}
           />
-          <button
-            type="button"
-            onClick={onChoosePlan}
-            disabled={!onChoosePlan}
-            className="bg-primary-brand hover:bg-primary-brand/90 focus-visible:ring-primary-brand h-[33px] w-full rounded-lg text-xs font-medium text-white transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
-          >
-            Choose plan
-          </button>
+          {ctaVariant === 'dual' ? (
+            <div className="flex w-full flex-col gap-2">
+              <button
+                type="button"
+                onClick={onChoosePlan}
+                disabled={!onChoosePlan}
+                className="bg-primary-brand hover:bg-primary-brand/90 focus-visible:ring-primary-brand h-[33px] w-full rounded-lg text-xs font-medium text-white transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+              >
+                {primaryCtaLabel}
+              </button>
+              <button
+                type="button"
+                onClick={onShowOtherPlans}
+                disabled={!onShowOtherPlans}
+                className="border-primary-brand text-primary-brand hover:bg-primary-brand/5 focus-visible:ring-primary-brand h-[33px] w-full rounded-lg border bg-white text-xs font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+              >
+                {secondaryCtaLabel}
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={onChoosePlan}
+              disabled={!onChoosePlan}
+              className="bg-primary-brand hover:bg-primary-brand/90 focus-visible:ring-primary-brand h-[33px] w-full rounded-lg text-xs font-medium text-white transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+            >
+              Choose plan
+            </button>
+          )}
         </div>
       </div>
 

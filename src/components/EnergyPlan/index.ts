@@ -1,4 +1,8 @@
-export { EnergyPlan, type EnergyPlanProps } from './EnergyPlan'
+export {
+  EnergyPlan,
+  type EnergyPlanCtaVariant,
+  type EnergyPlanProps,
+} from './EnergyPlan'
 export {
   EnergyPlanUnitRatesDetails,
   type EnergyPlanUnitRatesDetailsProps,
