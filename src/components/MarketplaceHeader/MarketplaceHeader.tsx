@@ -94,10 +94,10 @@ export function MarketplaceHeader({
           </div>
         </div>
 
-        <div className="bg-white px-4 pt-4 pb-5">
+        <div className="bg-white px-4 pb-5 md:pt-4">
           <a
             href="/"
-            className="inline-block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB]"
+            className="hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB] md:inline-block"
           >
             <img
               src={logoSvg}
@@ -107,7 +107,7 @@ export function MarketplaceHeader({
               className="h-4 w-auto"
             />
           </a>
-          <h1 className="mt-4 mb-3 text-[24px] leading-tight font-bold tracking-tight text-black">
+          <h1 className="mb-3 text-[24px] leading-tight font-bold tracking-tight text-black md:mt-4">
             Marketplace
           </h1>
           <nav
