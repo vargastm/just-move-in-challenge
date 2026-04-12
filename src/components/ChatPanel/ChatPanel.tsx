@@ -122,7 +122,7 @@ function GradientPill({ children }: { children: ReactNode }) {
 export function ChatPanel() {
   return (
     <aside
-      className="flex h-screen w-[500px] shrink-0 flex-col overflow-hidden border-l border-zinc-200 bg-[#ECECED]"
+      className="hidden h-screen w-[300px] shrink-0 flex-col overflow-hidden border-l border-zinc-200 bg-[#ECECED] min-[1000px]:flex min-[1200px]:w-[500px]"
       aria-label="Assistente Ask Jay"
     >
       <header className="shrink-0 border-b border-zinc-100 bg-white px-5 py-4">
