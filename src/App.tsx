@@ -8,11 +8,11 @@ import { energyPlanMock, energyPlanUnitRatesMock } from './mocks/energyPlanMock'
 
 function App() {
   return (
-    <div className="flex h-dvh min-h-0 overflow-hidden">
+    <div className="flex h-dvh min-h-0 overflow-hidden bg-zinc-100 md:bg-white">
       <SidebarRail />
-      <main className="bg-surface flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
+      <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden bg-zinc-100 md:bg-white">
         <MarketplaceHeader />
-        <div className="flex min-h-0 flex-1 flex-col overflow-hidden pl-10">
+        <div className="flex min-h-0 flex-1 flex-col overflow-hidden px-4 md:px-0 md:pl-10">
           <div className="scrollbar-hide min-h-0 flex-1 overflow-y-auto">
             <div className="flex flex-wrap items-start gap-6 pb-10">
               <CurrentPlan
