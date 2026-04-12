@@ -41,6 +41,7 @@ function App() {
 
               <EnergyPlan
                 {...energyPlanMock}
+                isTopPick
                 ratesDetails={
                   <EnergyPlanUnitRatesDetails {...energyPlanUnitRatesMock} />
                 }
