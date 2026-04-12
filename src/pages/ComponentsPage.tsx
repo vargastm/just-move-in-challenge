@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import { CurrentPlan } from '../components/CurrentPlan'
 import {
   EnergyPlan,
@@ -11,26 +13,39 @@ import {
 
 export function ComponentsPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center gap-10 bg-white px-6 py-12 max-[1200px]:flex-col">
-      <CurrentPlan
-        {...currentPlanMock}
-        onEdit={() => {
-          alert('Edit plan - future feature')
-        }}
-      />
-      <EnergyPlan
-        {...energyPlanMock}
-        ratesDetails={
-          <EnergyPlanUnitRatesDetails {...energyPlanUnitRatesMock} />
-        }
-        onChoosePlan={() => {
-          alert('Choose plan - future feature')
-        }}
-        onViewRates={() => {}}
-        onTopPickInfo={() => {
-          alert('Top pick — future feature')
-        }}
-      />
+    <div className="flex min-h-screen flex-col gap-8 bg-white px-6 py-8">
+      <header className="flex items-center justify-between gap-4 border-b border-zinc-200 pb-4">
+        <h1 className="text-lg font-semibold text-zinc-900">
+          Galeria de componentes
+        </h1>
+        <Link
+          to="/"
+          className="text-sm font-medium text-violet-700 underline-offset-4 hover:underline"
+        >
+          ← Marketplace
+        </Link>
+      </header>
+      <div className="flex flex-1 flex-wrap items-center justify-center gap-10 max-[1200px]:flex-col">
+        <CurrentPlan
+          {...currentPlanMock}
+          onEdit={() => {
+            alert('Edit plan - future feature')
+          }}
+        />
+        <EnergyPlan
+          {...energyPlanMock}
+          ratesDetails={
+            <EnergyPlanUnitRatesDetails {...energyPlanUnitRatesMock} />
+          }
+          onChoosePlan={() => {
+            alert('Choose plan - future feature')
+          }}
+          onViewRates={() => {}}
+          onTopPickInfo={() => {
+            alert('Top pick — future feature')
+          }}
+        />
+      </div>
     </div>
   )
 }
