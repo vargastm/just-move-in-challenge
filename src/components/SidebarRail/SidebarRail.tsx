@@ -28,7 +28,7 @@ function IconWrap({
 export function SidebarRail() {
   return (
     <aside
-      className="flex w-[72px] shrink-0 flex-col justify-between border-r py-5"
+      className="flex h-dvh min-h-0 w-[72px] shrink-0 flex-col justify-between overflow-hidden border-r py-5"
       style={{
         backgroundColor: railBg,
         borderColor: border,

@@ -17,7 +17,7 @@ export function MarketplaceHeader({
   activeCategory = 'Energy',
 }: MarketplaceHeaderProps) {
   return (
-    <header className="bg-white px-8 pt-7 pb-8">
+    <header className="shrink-0 bg-white px-10 pt-7 pb-8">
       <div className="flex max-w-full flex-col items-start">
         <a
           href="/"

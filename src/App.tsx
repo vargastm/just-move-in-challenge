@@ -8,34 +8,54 @@ import { energyPlanMock, energyPlanUnitRatesMock } from './mocks/energyPlanMock'
 
 function App() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-dvh min-h-0 overflow-hidden">
       <SidebarRail />
-      <main className="bg-surface flex min-h-screen min-w-0 flex-1 flex-col">
+      <main className="bg-surface flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
         <MarketplaceHeader />
-        <div className="flex flex-1 flex-col items-center justify-center gap-10 px-6 py-12">
-          <CurrentPlan
-            {...currentPlanMock}
-            onEdit={() => {
-              alert('Edit plan - future feature')
+        <div className="flex min-h-0 flex-1 flex-col overflow-hidden pl-10">
+          <div className="scrollbar-hide min-h-0 flex-1 overflow-y-auto">
+            <div className="flex flex-col items-start gap-6 pb-10">
+              <CurrentPlan
+                {...currentPlanMock}
+                onEdit={() => {
+                  alert('Edit plan - future feature')
 
-              /* integrate with the edit plan page */
-            }}
-          />
-          <EnergyPlan
-            {...energyPlanMock}
-            ratesDetails={
-              <EnergyPlanUnitRatesDetails {...energyPlanUnitRatesMock} />
-            }
-            onChoosePlan={() => {
-              alert('Choose plan - future feature')
-            }}
-            onViewRates={() => {
-              /* optional analytics */
-            }}
-            onTopPickInfo={() => {
-              alert('Top pick — future feature')
-            }}
-          />
+                  /* integrate with the edit plan page */
+                }}
+              />
+              <EnergyPlan
+                {...energyPlanMock}
+                ratesDetails={
+                  <EnergyPlanUnitRatesDetails {...energyPlanUnitRatesMock} />
+                }
+                onChoosePlan={() => {
+                  alert('Choose plan - future feature')
+                }}
+                onViewRates={() => {
+                  /* optional analytics */
+                }}
+                onTopPickInfo={() => {
+                  alert('Top pick — future feature')
+                }}
+              />
+
+              <EnergyPlan
+                {...energyPlanMock}
+                ratesDetails={
+                  <EnergyPlanUnitRatesDetails {...energyPlanUnitRatesMock} />
+                }
+                onChoosePlan={() => {
+                  alert('Choose plan - future feature')
+                }}
+                onViewRates={() => {
+                  /* optional analytics */
+                }}
+                onTopPickInfo={() => {
+                  alert('Top pick — future feature')
+                }}
+              />
+            </div>
+          </div>
         </div>
       </main>
       <ChatPanel />
