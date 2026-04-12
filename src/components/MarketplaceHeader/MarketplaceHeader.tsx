@@ -1,3 +1,4 @@
+import jaySvg from '../../assets/jay.svg'
 import logoSvg from '../../assets/justmovein.svg'
 
 const categories = [
@@ -14,32 +15,6 @@ const menuLavender = '#F0F0FF'
 
 export type MarketplaceHeaderProps = {
   activeCategory?: (typeof categories)[number]
-}
-
-function JaySparkleMark() {
-  return (
-    <svg
-      width={28}
-      height={14}
-      viewBox="0 0 28 14"
-      fill="none"
-      aria-hidden
-      className="shrink-0"
-    >
-      <path
-        fill="#EF4444"
-        d="M7 0l1.15 3.5L12 4.2 8.5 6.8 9.65 10.5 7 8.05 4.35 10.5 5.5 6.8 2 4.2l3.85-.7L7 0Z"
-      />
-      <path
-        fill="#6D28D9"
-        d="M22.5 1.5l.55 1.7L25 3.6l-1.9 1.35.7 2.15-1.85-1.35L19.2 7.1l.7-2.15-1.9-1.35 2.35-.4.55-1.7Z"
-      />
-      <path
-        fill="#7C3AED"
-        d="M17 6.5l.45 1.35L19 8.1l-1.45 1 .55 1.65L17 9.9l-1.55 1.15.55-1.65-1.45-1 1.8-.25L17 6.5Z"
-      />
-    </svg>
-  )
 }
 
 export function MarketplaceHeader({
@@ -81,11 +56,15 @@ export function MarketplaceHeader({
                   <span className="min-w-0 truncate text-[13px] text-zinc-400">
                     Ask me anything...
                   </span>
-                  <span className="flex shrink-0 items-center gap-1">
-                    <span className="text-[13px] font-bold tracking-tight text-zinc-900">
-                      Jay
-                    </span>
-                    <JaySparkleMark />
+                  <span className="flex shrink-0 items-center">
+                    <img
+                      src={jaySvg}
+                      alt=""
+                      width={41}
+                      height={16}
+                      className="h-4 w-auto shrink-0"
+                      aria-hidden
+                    />
                   </span>
                 </div>
               </div>

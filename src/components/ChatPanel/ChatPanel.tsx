@@ -1,30 +1,6 @@
-import { type ReactNode, useId } from 'react'
+import { type ReactNode } from 'react'
 
-function StarIcon() {
-  const gid = useId().replace(/:/g, '')
-  return (
-    <svg
-      width={14}
-      height={14}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden
-      className="shrink-0"
-    >
-      <defs>
-        <linearGradient id={gid} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#A855F7" />
-          <stop offset="55%" stopColor="#EC4899" />
-          <stop offset="100%" stopColor="#F97316" />
-        </linearGradient>
-      </defs>
-      <path
-        fill={`url(#${gid})`}
-        d="M12 2l2.2 6.8H21l-5.5 4 2.1 6.7L12 15.4l-5.6 4.1 2.1-6.7L3 8.8h6.8L12 2z"
-      />
-    </svg>
-  )
-}
+import jaySvg from '../../assets/jay.svg'
 
 function ReplyArrowIcon() {
   return (
@@ -130,11 +106,14 @@ export function ChatPanel() {
           <span className="text-[15px] font-normal tracking-tight text-zinc-900">
             Ask
           </span>
-          <span className="text-[15px] font-bold tracking-tight text-zinc-900">
-            Jay
-          </span>
-          <StarIcon />
-          <StarIcon />
+          <img
+            src={jaySvg}
+            alt=""
+            width={41}
+            height={16}
+            className="h-[18px] w-auto shrink-0 translate-y-px"
+            aria-hidden
+          />
         </div>
       </header>
 
