@@ -14,7 +14,7 @@ function App() {
         <MarketplaceHeader />
         <div className="flex min-h-0 flex-1 flex-col overflow-hidden pl-10">
           <div className="scrollbar-hide min-h-0 flex-1 overflow-y-auto">
-            <div className="flex flex-col items-start gap-6 pb-10">
+            <div className="flex flex-wrap items-start gap-6 pb-10">
               <CurrentPlan
                 {...currentPlanMock}
                 onEdit={() => {
