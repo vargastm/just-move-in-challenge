@@ -16,7 +16,7 @@ export function ComponentsPage() {
     <div className="flex min-h-screen flex-col gap-8 bg-white px-6 py-8">
       <header className="flex items-center justify-between gap-4 border-b border-zinc-200 pb-4">
         <h1 className="text-lg font-semibold text-zinc-900">
-          Galeria de componentes
+          Components gallery
         </h1>
         <Link
           to="/"

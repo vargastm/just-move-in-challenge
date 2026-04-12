@@ -5,6 +5,19 @@
 - [App](https://just-move-in-challenge.vercel.app/)
 - [Components](https://just-move-in-challenge.vercel.app/components)
 
+## Notes
+- I set up color variables and reusable components, and added ESLint and Prettier to keep code standards consistent. I also followed Conventional Commits and a clear project architecture.
+
+- I used Cursor to speed up development, helping generate components quickly, and then refined the necessary details to ensure everything worked as expected.
+
+- I quickly built a page based on the layout to see how the components behave in the system. Please check both mobile and desktop so we can validate all variants.
+
+- As a next step, I would create dedicated components for primary and secondary buttons, but I prioritized other parts due to the 2-hour time constraint.
+
+- I aimed for pixel-perfect accuracy, but made a few spacing adjustments where it felt more visually balanced. I also fixed a small typo in “address”.
+
+- The “View plan details” button on mobile is currently the same as desktop, but it can be easily adjusted if needed.
+
 ## Tech stack
 
 | Area | Technology |
