@@ -18,9 +18,6 @@ function App() {
 
               /* integrate with the edit plan page */
             }}
-            onViewPlanDetails={() => {
-              /* integrate with the plan details page */
-            }}
           />
         </div>
       </main>

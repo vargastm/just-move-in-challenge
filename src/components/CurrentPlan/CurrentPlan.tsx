@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react'
+import { type ReactNode, useId, useState } from 'react'
 
 import calculatorSvg from '../../assets/calculator.svg'
 import checkSvg from '../../assets/check.svg'
@@ -11,11 +11,12 @@ export type CurrentPlanProps = {
   supplierLogoSrc: string
   tariff: string
   address: string
-  mpan: string
+  mpan: number
   showExitFeeBanner?: boolean
   usageSummary: number
+  estimatedMonthlyElectricityCost: number
+  estimatedAnnualElectricityCost: number
   onEdit?: () => void
-  onViewPlanDetails?: () => void
 }
 
 const iconSrc = {
@@ -80,9 +81,13 @@ export function CurrentPlan({
   mpan,
   showExitFeeBanner,
   usageSummary,
+  estimatedMonthlyElectricityCost,
+  estimatedAnnualElectricityCost,
   onEdit,
-  onViewPlanDetails,
 }: CurrentPlanProps) {
+  const [planDetailsOpen, setPlanDetailsOpen] = useState(false)
+  const planDetailsPanelId = useId()
+
   const logo =
     supplierLogo ??
     (supplierLogoSrc ? (
@@ -126,7 +131,7 @@ export function CurrentPlan({
       ) : null}
 
       <div className="border-primary-border grid gap-0 border-t md:grid-cols-2">
-        <div className="border-primary-border py-2.5 pr-2.5 pl-5.5 md:border-r">
+        <div className="border-primary-border pt-2.5 pr-2.5 pb-4 pl-5.5 md:border-r">
           <div>
             <DetailBlock label="Tariff" value={tariff} />
             <DetailBlock label="Address" value={address} />
@@ -134,7 +139,7 @@ export function CurrentPlan({
           </div>
         </div>
 
-        <div className="px-5.5 py-2.5">
+        <div className="px-5.5 pt-2.5 pb-2">
           <div className="text-text-secondary flex items-center gap-2 text-sm font-semibold">
             <IconImg src={iconSrc.calculator} width={15} height={15} />
             <span className="text-xs font-bold">
@@ -152,16 +157,43 @@ export function CurrentPlan({
             Electricity:
             <span className="font-semibold"> {usageSummary}kWh</span>
           </p>
-          <div className="mt-4 flex justify-center">
+          <div className="mt-3 flex flex-col items-center gap-1.5">
             <button
               type="button"
-              onClick={onViewPlanDetails}
-              disabled={!onViewPlanDetails}
-              className="text-primary-brand hover:text-primary-brand/80 focus-visible:ring-primary-brand inline-flex items-center gap-1 rounded text-[10px] font-medium focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+              onClick={() => setPlanDetailsOpen((open) => !open)}
+              aria-expanded={planDetailsOpen}
+              aria-controls={planDetailsPanelId}
+              className="text-primary-brand hover:text-primary-brand/80 focus-visible:ring-primary-brand inline-flex items-center gap-1 rounded text-[10px] font-medium focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
             >
-              View plan details
-              <IconImg src={iconSrc.chevronDown} width={20} height={20} />
+              {planDetailsOpen ? 'Hide plan details' : 'Show plan details'}
+              <IconImg
+                src={iconSrc.chevronDown}
+                width={20}
+                height={20}
+                className={`transition-transform ${planDetailsOpen ? 'rotate-180' : ''}`}
+              />
             </button>
+            {planDetailsOpen ? (
+              <div
+                id={planDetailsPanelId}
+                role="region"
+                aria-label="Estimated electricity cost"
+                className="border-primary-border w-full max-w-[240px] rounded-2xl border bg-[#F9FAFB] p-4 pb-[9px]"
+              >
+                <p className="text-text-secondary text-xs font-normal">
+                  Est. monthly electricity cost
+                </p>
+                <p className="text-text-primary text-base leading-tight">
+                  <span className="font-bold">
+                    £{estimatedMonthlyElectricityCost}
+                  </span>
+                  <span className="font-medium">/mo</span>
+                </p>
+                <p className="text-text-secondary text-[10px] font-normal">
+                  £{estimatedAnnualElectricityCost}/year
+                </p>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
