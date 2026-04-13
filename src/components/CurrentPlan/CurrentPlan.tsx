@@ -68,7 +68,9 @@ function DetailBlock({ label, value }: { label: string; value: string }) {
       <p className="text-text-secondary text-[10px] tracking-wide uppercase">
         {label}
       </p>
-      <p className="text-text-secondary mt-0.5 text-xs">{value}</p>
+      <p className="text-text-secondary mt-0.5 max-w-[170px] text-xs">
+        {value}
+      </p>
     </div>
   )
 }

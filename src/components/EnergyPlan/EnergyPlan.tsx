@@ -132,8 +132,7 @@ export function EnergyPlan({
     <article className="border-primary-border w-full max-w-[556px] overflow-hidden rounded-xl border bg-white shadow-sm md:w-[556px]">
       {savingsBannerText ? (
         <div
-          className="text-text-primary flex min-h-9 items-center justify-center px-4 py-2 text-center text-xs font-bold"
-          style={{ backgroundColor: '#FCE88D' }}
+          className="text-text-primary bg-primary-yellow border-secondary-yellow flex min-h-9 items-center justify-center border-b px-4 py-2 text-center text-xs font-bold"
           role="status"
         >
           {savingsBannerText}
