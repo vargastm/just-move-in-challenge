@@ -13,7 +13,7 @@ import {
 
 export function ComponentsPage() {
   return (
-    <div className="flex min-h-screen flex-col gap-8 bg-white px-6 py-8">
+    <div className="flex h-dvh min-h-0 flex-col gap-8 overflow-y-auto bg-white px-6 py-8">
       <header className="flex items-center justify-between gap-4 border-b border-zinc-200 pb-4">
         <h1 className="text-lg font-semibold text-zinc-900">
           Components gallery
@@ -43,6 +43,38 @@ export function ComponentsPage() {
           onViewRates={() => {}}
           onTopPickInfo={() => {
             alert('Top pick — future feature')
+          }}
+        />
+        <EnergyPlan
+          {...energyPlanMock}
+          ratesDetails={
+            <EnergyPlanUnitRatesDetails {...energyPlanUnitRatesMock} />
+          }
+          onChoosePlan={() => {
+            alert('Choose plan - future feature')
+          }}
+          onViewRates={() => {}}
+          onTopPickInfo={() => {
+            alert('Top pick — future feature')
+          }}
+          isTopPick
+        />
+
+        <EnergyPlan
+          {...energyPlanMock}
+          ratesDetails={
+            <EnergyPlanUnitRatesDetails {...energyPlanUnitRatesMock} />
+          }
+          onChoosePlan={() => {
+            alert('Choose plan - future feature')
+          }}
+          onViewRates={() => {}}
+          onTopPickInfo={() => {
+            alert('Top pick — future feature')
+          }}
+          ctaVariant="dual"
+          onShowOtherPlans={() => {
+            alert('Show other plans - future feature')
           }}
         />
       </div>
